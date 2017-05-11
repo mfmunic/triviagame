@@ -1,5 +1,6 @@
 body {
-	background-color: gray;
+	background: url("https://thereadersguidetoepublishing.files.wordpress.com/2012/08/welcome-to-redemption-town-pic.jpg") no-repeat;
+	background-size: cover;
 	margin-bottom: 0px;
 	padding: 0;
 }

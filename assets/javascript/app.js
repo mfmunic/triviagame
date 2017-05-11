@@ -13,7 +13,7 @@ var trivia = [{
 	explain: ["Renamed Auburn, Washington", "A village in County Kildare, Ireland.", "A town in Texas northeast of Conroe, Texas, On Texas Route 105."]
 },
 {
-	question: "Which place is so dumb it was never made.",
+	question: "Which place is so dumb it was never made?",
 	wrong: ["Stupid Lake","Idiotville","Moron"],
 	correct: "Dumb",
 	explain: ["A lake in Manitoba, Canada", "A ghost town in Oregon.", "An Argentine city."]
@@ -21,7 +21,7 @@ var trivia = [{
 {
 	question: "What area do you need to smoke to actually find?",
 	wrong: ["Bong County","Ganja","Weed"],
-	correct: "Marijuana",
+	correct: "Marijuana Forest Park",
 	explain: ["A county in Liberia, named for its Mount Bong.", "A city in Azerbaijan.", "Town in Siskiyou County, California"]
 },
 {
@@ -38,9 +38,9 @@ var trivia = [{
 }
 ,
 {
-	question: "Which name is just me hitting keys on the keyboard",
-	wrong: ["Lake Chargoggagoggmanchauggagoggchaubunagungamaugg","Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch","El Pueblo de Nuestra Señora la Reina de los Ángeles de Porciúncula"],
-	correct: "Gcwjogheshdfkjhgakhlkda",
+	question: "Which name is just me hitting keys on the keyboard?",
+	wrong: ["Lake Chargoggagoggmanchauggagoggchaubunagungamaugg","Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch","El Pueblo de Nuestra Senora la Reina de los Angeles de Porciuncula"],
+	correct: "Gcwjogheshdfkjhgakhlkda County",
 	explain: ["The longest place name in the United States and 6th longest in the world.", "The longest officially recognised place name in the United Kingdom. It is found in Wales near the Isle of Anglesey and is situated near the A5", "The original name of Los Angeles. The name means The Town of Our Lady the Queen of the Angels of Porziuncola."]
 }
 ];
@@ -73,18 +73,23 @@ function showQuestion(){
 		$("#displayQuestion").text(trivia[questCount].question);
 
 		correctAnswer = Math.floor(Math.random()*4);
-		var wrongAnswer = 0;
 		$("#but"+correctAnswer).text(trivia[questCount].correct);
+		console.log(correctAnswer)
+		var wrongAnswer = 0;
 
 		for(i=0;i<4;i++){
+			
 			if(i != correctAnswer){
 				$("#but"+i).text(trivia[questCount].wrong[wrongAnswer]);
-				wrongAnswer++;
+				$("#but"+i).attr("aaa", wrongAnswer);
+				console.log(wrongAnswer);
+				
 			} else if (i==correctAnswer){
 				i++;
 				$("#but"+i).text(trivia[questCount].wrong[wrongAnswer]);
-				wrongAnswer++;
+				$("#but"+i).attr("aaa", wrongAnswer);
 			}//end of if/else
+			wrongAnswer++;
 		}//end for loop
 
 		$("#but0").on("click", checkAnswer)
@@ -150,7 +155,8 @@ function timerOn() {
 
 //check answer function
 function checkAnswer(){
-	var guess=$(this).attr("aaa")
+	var guess=$(this).attr("bbb")
+	var guessEx=$(this).attr("aaa")
 
 	$("#but0").off()
 	$("#but1").off()
@@ -168,7 +174,7 @@ function checkAnswer(){
 		$("#but"+guess).css("font-weight", "bold");
 		// $("#but"+correctAnswer).css("color", "green");
 		// $("#but"+correctAnswer).css("font-weight", "bold");
-		$("#displayQuestion").text(trivia[questCount].explain[guess])
+		$("#displayQuestion").text(trivia[questCount].explain[guessEx])
 		console.log(trivia[questCount].explain[guess])
 		loss();
 	};
