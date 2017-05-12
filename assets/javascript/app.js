@@ -28,7 +28,7 @@ var trivia = [{
 	question: "Which Boring is too boring to be real?",
 	wrong: ["Boring, Maryland","Boring, Oregon","Boring, Tennessee"],
 	correct: "Boring, Nebraska",
-	explain: ["Named for a former postmaster David Boring, whose profession suited the family name.", "Twinned with Dull, Scotland.", "Well-named: as of May 2017, the length of its Wikipedia entry is 1,338 characters (compared to 60,544 on this page)."]
+	explain: ["Named for a former postmaster David Boring, whose profession suited the family name.", "Twinned with Dull, Scotland.", "Well-named: as of May 2017, the length of its Wikipedia entry is 1,338 characters."]
 },
 {
 	question: "Which Mount could use some levity and become a place?",
@@ -174,7 +174,7 @@ function checkAnswer(){
 		$("#but"+guess).css("font-weight", "bold");
 		// $("#but"+correctAnswer).css("color", "green");
 		// $("#but"+correctAnswer).css("font-weight", "bold");
-		$("#displayQuestion").text(trivia[questCount].explain[guessEx])
+		$("#displayQuestion").text("Wrong! - "+trivia[questCount].explain[guessEx])
 		console.log(trivia[questCount].explain[guess])
 		loss();
 	};
