@@ -6,7 +6,7 @@ import { RandomizeTriviaService } from "../randomize-trivia.service";
   templateUrl: "./question.component.html",
   styleUrls: ["./question.component.scss"]
 })
-export class QuestionComponent {
+export class QuestionComponent implements OnInit {
   @Output() end = new EventEmitter<boolean>();
   @Output() sendAnswered = new EventEmitter<boolean>();
   @Output() sendCorrect = new EventEmitter<boolean>();
@@ -14,12 +14,12 @@ export class QuestionComponent {
   answered: number = 0;
   // correct: number = 0;
   quiz: object[];
-  question: object;
+  question: any;
 
   //the 'is' prefix refers to current question
   isCorrect: boolean = false;
   isAnswered: boolean = false;
-  currAnswer: object = { id: 0, answer: "", explain: "", correct: false };
+  currAnswer: any;
 
   constructor(private trivia: RandomizeTriviaService) {}
 
