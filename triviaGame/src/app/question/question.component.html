@@ -6,7 +6,8 @@
     </li>
   </ul>
   <div [ngClass]="{ show: isAnswered, hide: !isAnswered }">
-    <h3>{{ currAnswer.explain ? currAnswer.explain : "" }}</h3>
+    <h3>{{ currAnswer.correct ? "" : "Wrong!" }}</h3>
+    <h4>{{ currAnswer.explain }}</h4>
     <button (click)="nextQuestion()">Next Question</button>
   </div>
 </div>

@@ -8,6 +8,8 @@ import { InstructionStartComponent } from "./instruction-start/instruction-start
 import { QuestionComponent } from "./question/question.component";
 
 import { RandomizeTriviaService } from "./randomize-trivia.service";
+import { ActionsService } from "./actions.service";
+import { FinalScoreComponent } from './final-score/final-score.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,11 @@ import { RandomizeTriviaService } from "./randomize-trivia.service";
     TimerComponent,
     DisplayAreaComponent,
     InstructionStartComponent,
-    QuestionComponent
+    QuestionComponent,
+    FinalScoreComponent
   ],
   imports: [BrowserModule],
-  providers: [RandomizeTriviaService],
+  providers: [RandomizeTriviaService, ActionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

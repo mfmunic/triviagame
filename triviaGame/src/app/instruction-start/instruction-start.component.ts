@@ -1,17 +1,17 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { ActionsService } from "../actions.service";
 
 @Component({
   selector: "app-instruction-start",
   templateUrl: "./instruction-start.component.html",
   styleUrls: ["./instruction-start.component.scss"]
 })
-export class InstructionStartComponent implements OnInit {
-  start: boolean = true;
+export class InstructionStartComponent {
+  @Output() start = new EventEmitter<boolean>();
+
   constructor() {}
 
-  ngOnInit() {}
-
   startQuiz() {
-    this.start = false;
+    this.start.emit();
   }
 }

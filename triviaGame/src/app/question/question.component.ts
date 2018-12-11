@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { RandomizeTriviaService } from "../randomize-trivia.service";
 
 @Component({
@@ -6,9 +6,13 @@ import { RandomizeTriviaService } from "../randomize-trivia.service";
   templateUrl: "./question.component.html",
   styleUrls: ["./question.component.scss"]
 })
-export class QuestionComponent implements OnInit {
+export class QuestionComponent {
+  @Output() end = new EventEmitter<boolean>();
+  @Output() sendAnswered = new EventEmitter<boolean>();
+  @Output() sendCorrect = new EventEmitter<boolean>();
+
   answered: number = 0;
-  correct: number = 0;
+  // correct: number = 0;
   quiz: object[];
   question: object;
 
@@ -26,6 +30,7 @@ export class QuestionComponent implements OnInit {
 
   submitAnswer(clicked) {
     this.answered++;
+    this.sendAnswered.emit();
     this.isAnswered = true;
 
     //@ts-ignore
@@ -34,14 +39,18 @@ export class QuestionComponent implements OnInit {
     //@ts-ignore
     if (this.currAnswer.correct === true) {
       this.isCorrect = true;
-      this.correct++;
+      this.sendCorrect.emit();
+      // this.correct++;
     }
-    console.log(this.answered, this.correct);
   }
 
   nextQuestion() {
-    this.question = this.trivia.setQuestion(this.quiz[this.answered]);
-    this.isAnswered = false;
-    this.isCorrect = false;
+    if (this.answered === this.quiz.length) {
+      this.end.emit();
+    } else {
+      this.question = this.trivia.setQuestion(this.quiz[this.answered]);
+      this.isAnswered = false;
+      this.isCorrect = false;
+    }
   }
 }
