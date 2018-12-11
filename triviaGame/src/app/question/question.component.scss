@@ -1,0 +1,23 @@
+#questDiv {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  ul {
+    list-style: none;
+  }
+}
+
+#displayQuestion {
+  margin-bottom: 20px;
+}
+
+.buts {
+  font-size: 15px;
+  margin: 10px;
+  border: 2px solid white;
+}
+
+.buts:hover {
+  border: 2px solid black;
+  cursor: pointer;
+}

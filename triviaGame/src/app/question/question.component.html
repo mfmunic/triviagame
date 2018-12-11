@@ -1,0 +1,13 @@
+<div id="questDiv">
+  <h1 id="displayQuestion">{{ question.question }}</h1>
+  <ul id="answerList">
+    <li *ngFor="let answer of question.answers">
+      <p class="buts" (click)="submitAnswer(answer.id)">{{ answer.answer }}</p>
+    </li>
+  </ul>
+  <div [ngClass]="{ show: isAnswered, hide: !isAnswered }">
+    <h3>{{ currAnswer.correct ? "" : "Wrong!" }}</h3>
+    <h4>{{ currAnswer.explain }}</h4>
+    <button (click)="nextQuestion()">Next Question</button>
+  </div>
+</div>

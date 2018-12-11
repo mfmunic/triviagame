@@ -1,0 +1,18 @@
+<div id="questionCard">
+  <app-instruction-start
+    (start)="changeStart()"
+    [class.hide]="!start"
+  ></app-instruction-start>
+  <app-question
+    (end)="changeEnd()"
+    (sendAnswered)="answeredQuestion()"
+    (sendCorrect)="answerCorrect()"
+    [ngClass]="{ hide: start || end }"
+  ></app-question>
+  <app-final-score
+    [ngClass]="{ hide: !end }"
+    [correct]="correct"
+    [answered]="answered"
+    (again)="playAgain()"
+  ></app-final-score>
+</div>
