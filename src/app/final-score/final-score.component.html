@@ -1,0 +1,7 @@
+<div id="finalDiv">
+  <h1>Quiz Over!</h1>
+  <h3>You got {{ correct }} correct out of {{ answered }} questions</h3>
+  <h3>It took you a total of {{ time }} seconds</h3>
+  <h4>{{ correct >= answered - 2 ? "Good Job!!!" : "You could do better" }}</h4>
+  <button (click)="playAgain()">Play Again?</button>
+</div>
