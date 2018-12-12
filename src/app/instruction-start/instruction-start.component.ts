@@ -9,9 +9,10 @@ import { ActionsService } from "../actions.service";
 export class InstructionStartComponent {
   @Output() start = new EventEmitter<boolean>();
 
-  constructor() {}
+  constructor(private timer: ActionsService) {}
 
   startQuiz() {
     this.start.emit();
+    this.timer.startQuizTimer();
   }
 }

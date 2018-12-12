@@ -1,0 +1,40 @@
+#timerContainer {
+  position: relative;
+  z-index: 2;
+  height: 10px;
+  background: white;
+  float: right;
+  width: 360px;
+  box-shadow: 0 0 10px black;
+  margin-right: 20px;
+  transition-duration: 1s;
+}
+
+// #timer {
+//   width: 340px;
+//   height: 20px;
+//   background-color: black;
+//   border-radius: 10px 10px;
+//   padding: 2px;
+//   margin: 0;
+//   color: white;
+//   text-align: center;
+//   font-weight: bold;
+// }
+
+#dotsList {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0 0;
+  margin: 0 0;
+}
+
+.timerDots {
+  background-color: #00ff00;
+  width: 1px;
+  height: 17px;
+  // border-radius: 50%;
+  margin: 0 0;
+  padding: 0 0;
+}
