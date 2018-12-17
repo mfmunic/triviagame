@@ -1,61 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Trivia Game!</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-131126723-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      gtag("config", "UA-131126723-1");
+    </script>
+    <title>Trivia Game!</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
 
-	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
 
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"
+    ></script>
 
-</head>
-<body>
-	<header>
-		<table id="headerTitle" class="container">
-			<tbody>
-				<tr>
-					<td>
-						<h1>They Called It What!</h1>
-						<p>Guess which place is fake.</p>
-					</td>
-					<td>
-						<button id="start">Start Quiz
-						</button>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <table id="headerTitle" class="container">
+        <tbody>
+          <tr>
+            <td>
+              <h1>They Called It What!</h1>
+              <p>Guess which place is fake.</p>
+            </td>
+            <td><button id="start">Start Quiz</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </header>
 
-	</header>
+    <div id="boundary" class="container">
+      <table id="timerContainer">
+        <tbody id="timer"></tbody>
+      </table>
 
-	<div id="boundary" class="container">
+      <div id="questionCard">
+        <div id="questDiv">
+          <h1 id="displayQuestion"></h1>
+          <ul id="answerList">
+            <li><p class="buts" id="but0" bbb="0"></p></li>
+            <li><p class="buts" id="but1" bbb="1"></p></li>
+            <li><p class="buts" id="but2" bbb="2"></p></li>
+            <li><p class="buts" id="but3" bbb="3"></p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
 
-		<table id="timerContainer">
-			<tbody id="timer">
-			</tbody>
-		</table>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"
+  ></script>
 
-		<div id="questionCard">
-			<div id="questDiv">
-				<h1 id="displayQuestion"></h1>
-				<ul id="answerList">
-					<li><p class="buts" id="but0" bbb="0"></p></li>
-					<li><p class="buts" id="but1" bbb="1"></p></li>
-					<li><p class="buts" id="but2" bbb="2"></p></li>
-					<li><p class="buts" id="but3" bbb="3"></p></li>
-				</ul>
-			</div>
-		</div>
-
-	</div>
-
-</body>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="assets/javascript/app.js">
-</script>
-
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
 </html>
