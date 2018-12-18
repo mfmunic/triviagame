@@ -8,8 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "predploy": "ng deploy",
-    "deploy": "ng build --prod --base-href https://mfmunic.github.io/triviagame/ && angular-cli-ghpages --branch gh-pages"
+    "predploy": "ng build --prod --base-href https://mfmunic.github.io/triviagame/ && angular-cli-ghpages --branch gh-pages",
+    "deploy": "ngh --dir dist/triviagame"
   },
   "private": true,
   "dependencies": {
